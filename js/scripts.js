@@ -1,11 +1,10 @@
 // Targeting dom elements
 
-const passengerName = document.getElementById('name');
-const kilometers = document.getElementById('distance');
-const passengerAge = document.getElementById('age');
+const elementName = document.getElementById('name');
+const elementKm = document.getElementById('distance');
+const elementAge = document.getElementById('age');
+const button = document.querySelector('button');
 const tempAnswer = document.querySelector('.temporary-answer');
-
-console.log(passengerAge, passengerName, kilometers, tempAnswer);
 
 // declaring const variables
 
