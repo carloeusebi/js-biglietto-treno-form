@@ -22,7 +22,19 @@ button.addEventListener('click', function(){
     //TODO add validation
 
     let basePrice = kilometers * pricePerKm;
+    let discountedPrice = null;
     
-    console.log(basePrice);
+    console.log('Base price: ' + basePrice);
+
+    if (passengerAge === 'junior') discountedPrice = basePrice * discountJunior;
+     else if (passengerAge === 'senior') discountedPrice = basePrice * discountSenior;
+
+    if (discountedPrice) console.log('Discount: ' + discountedPrice);
+
+    tempAnswer.innerHTML = `Prezzo del biglietto: <strong>${basePrice.toFixed(2)}€</strong>`;
+    
+    if (discountedPrice) {
+        tempAnswer.innerHTML += `<br>Prezzo dopo lo sconto per <em>${passengerAge}</em>: <strong>${discountedPrice.toFixed(2)}€</strong>`
+    }
 
 })
