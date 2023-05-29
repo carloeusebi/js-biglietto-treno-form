@@ -33,7 +33,7 @@ button.addEventListener('click', function () {
         document.getElementById('validate-name').style.display = 'block';
     }
 
-    if (!kilometers || kilometers < 1 || kilometers > 1000) {
+    if (!kilometers || kilometers < 1 || kilometers > 5000) {
         isValid = false;
         elementKm.classList.add('is-invalid');
         document.getElementById('validate-km').style.display = 'block';
@@ -46,10 +46,12 @@ button.addEventListener('click', function () {
     }
 
     // ! AFTER validation 'grab' all dom element
+    const ticket = document.querySelector('.ticket');
 
-    if (isValid) {
+    if (!isValid) {
+        ticket.classList.add('hidden');
+    } else {
 
-        const ticket = document.querySelector('.ticket');
         const ticketName = document.getElementById('ticket-name');
         const ticketType = document.getElementById('ticket-type');
         const ticketPrice = document.getElementById('ticket-price');
