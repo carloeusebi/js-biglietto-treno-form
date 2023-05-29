@@ -56,26 +56,19 @@ submitButton.addEventListener('click', function () {
         if (passengerAge === 'junior') price *= discountJunior;
         else if (passengerAge === 'senior') price *= discountSenior;
 
-        const ticketNumber = generateRndNumber(100000, 999999);
+        const ticketCode = generateRndNumber(100000, 999999);
         const cab = generateRndNumber(2, 9);
         const seat = generateRndNumber(1, 99);
 
         ticket.classList.remove('hidden'); //show ticket
 
         // collect dom elements and print outputs
-        const ticketName = document.getElementById('ticket-name');
-        const ticketType = document.getElementById('ticket-type');
-        const ticketPrice = document.getElementById('ticket-price');
-        const ticketCab = document.getElementById('ticket-cab');
-        const ticketSeat = document.getElementById('ticket-seat');
-        const ticketCode = document.getElementById('ticket-code');
-
-        ticketName.innerText = passengerName;
-        ticketType.innerText = passengerAge;
-        ticketPrice.innerText = price.toFixed(2) + '€';
-        ticketCode.innerText = ticketNumber;
-        ticketCab.innerText = cab;
-        ticketSeat.innerText = seat;
+        document.getElementById('ticket-name').innerText = passengerName;
+        document.getElementById('ticket-type').innerText = passengerAge;
+        document.getElementById('ticket-price').innerText = price.toFixed(2) + '€';
+        document.getElementById('ticket-code').innerText = ticketCode;
+        document.getElementById('ticket-cab').innerText = cab;
+        document.getElementById('ticket-seat').innerText = seat;
     }
 })
 
