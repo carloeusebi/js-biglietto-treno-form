@@ -26,6 +26,33 @@
     <!-- Exercise made by
     CARLO EUSEBI -->
 
+    <div class="container">
+        <div class="row row-cols-3">
+
+            <div class="mb-3 col">
+                <label class="mb-2" for="name">Nome e Cognome</label>
+                <input type="text" class="form-control" id="name" value="Carlo Eusebi">
+            </div>
+            <div class="mb-3 col">
+                <label class="mb-2" for="distance">Kilometri da percorrere</label>
+                <input type="number" class="form-control" id="distance" value="100">
+            </div>
+            <div class="mb-3 col">
+                <label class="mb-2" for="distance">Kilometri da percorrere</label>
+                <select class="form-control">
+                    <option value="adult" selected>Adulto</option>
+                    <option value="junior">Minorenne</option>
+                    <option value="senior">Over 65</option>
+                </select>
+            </div>
+        </div>
+        <div class="text-end">
+            <button class="btn btn-success">Calcola Ticket</button>
+        </div>
+    </div>
+
+    <div class="temporary-answer"></div>
+
 </body>
 
 </html>
