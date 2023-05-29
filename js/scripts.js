@@ -21,6 +21,20 @@ button.addEventListener('click', function(){
 
     //TODO add validation
 
+    // ! AFTER validation 'grab' all dom element
+
+    const ticket = document.querySelector('.ticket');
+    const ticketName = document.getElementById('ticket-name');
+    const ticketType = document.getElementById('ticket-type');
+    const ticketCab = document.getElementById('ticket-cab');
+    const ticketSeat = document.getElementById('ticket-seat');
+    const ticketCode = document.getElementById('ticket-code');
+
+    console.log(ticket, ticketName, ticketType, ticketCab, ticketSeat, ticketCode);
+
+    // show ticket
+    ticket.classList.remove('hidden');
+
     let basePrice = kilometers * pricePerKm;
     let discountedPrice = null;
     
@@ -30,11 +44,4 @@ button.addEventListener('click', function(){
      else if (passengerAge === 'senior') discountedPrice = basePrice * discountSenior;
 
     if (discountedPrice) console.log('Discount: ' + discountedPrice);
-
-    tempAnswer.innerHTML = `Prezzo del biglietto: <strong>${basePrice.toFixed(2)}€</strong>`;
-    
-    if (discountedPrice) {
-        tempAnswer.innerHTML += `<br>Prezzo dopo lo sconto per <em>${passengerAge}</em>: <strong>${discountedPrice.toFixed(2)}€</strong>`
-    }
-
 })
