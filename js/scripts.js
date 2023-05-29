@@ -17,8 +17,6 @@ button.addEventListener('click', function(){
     const passengerAge = elementAge.value;
     const kilometers = parseInt(elementKm.value);
     
-    console.log(passengerName, passengerAge, kilometers);
-
     //TODO add validation
 
     // ! AFTER validation 'grab' all dom element
@@ -26,22 +24,26 @@ button.addEventListener('click', function(){
     const ticket = document.querySelector('.ticket');
     const ticketName = document.getElementById('ticket-name');
     const ticketType = document.getElementById('ticket-type');
+    const ticketPrice = document.getElementById('ticket-price');
     const ticketCab = document.getElementById('ticket-cab');
     const ticketSeat = document.getElementById('ticket-seat');
     const ticketCode = document.getElementById('ticket-code');
 
-    console.log(ticket, ticketName, ticketType, ticketCab, ticketSeat, ticketCode);
+    
+    let price = kilometers * pricePerKm;
+    
+    if (passengerAge === 'junior') price *= discountJunior;
+    else if (passengerAge === 'senior') price *= discountSenior;
 
+    //TODO generate random ticket code, cab and seat;
+    
+    // # print on screen
     // show ticket
     ticket.classList.remove('hidden');
 
-    let basePrice = kilometers * pricePerKm;
-    let discountedPrice = null;
-    
-    console.log('Base price: ' + basePrice);
+    ticketName.innerText = passengerName;
+    ticketType.innerText = passengerAge;
+    ticketPrice.innerText = price.toFixed(2) + '€';
 
-    if (passengerAge === 'junior') discountedPrice = basePrice * discountJunior;
-     else if (passengerAge === 'senior') discountedPrice = basePrice * discountSenior;
 
-    if (discountedPrice) console.log('Discount: ' + discountedPrice);
 })
