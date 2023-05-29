@@ -13,6 +13,13 @@ const discountJunior = 0.8;
 const discountSenior = 0.6;
 
 button.addEventListener('click', function () {
+    // clean old errors
+    elementName.classList.remove('is-invalid');
+    elementKm.classList.remove('is-invalid');
+    document.getElementById('validate-name').style.display = 'none';
+    document.getElementById('validate-km').style.display = 'none';
+
+    // collect user inputs
     const passengerName = elementName.value.trim();
     const passengerAge = elementAge.value;
     const kilometers = parseInt(elementKm.value);
@@ -22,14 +29,20 @@ button.addEventListener('click', function () {
 
     if (!passengerName) {
         isValid = false;
+        elementName.classList.add('is-invalid');
+        document.getElementById('validate-name').style.display = 'block';
     }
 
     if (!kilometers || kilometers < 1 || kilometers > 1000) {
         isValid = false;
+        elementKm.classList.add('is-invalid');
+        document.getElementById('validate-km').style.display = 'block';
     }
 
+    // it's VERY hard to mess a select but who knows :)
     if (passengerAge !== 'adulto' && passengerAge !== 'senior' && passengerAge !== 'junior') {
         isValid = false;
+        elementAge.classList.add('is-invalid');
     }
 
     // ! AFTER validation 'grab' all dom element

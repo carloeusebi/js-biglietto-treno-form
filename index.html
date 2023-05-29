@@ -32,10 +32,16 @@
             <div class="mb-3 col">
                 <label class="mb-2" for="name">Nome e Cognome</label>
                 <input type="text" class="form-control" id="name" value="Carlo Eusebi">
+                <div id="validate-name" class="invalid-feedback">
+                    Per favore inserisci un nome valido!
+                </div>
             </div>
             <div class="mb-3 col">
                 <label class="mb-2" for="distance">Kilometri da percorrere</label>
                 <input type="number" class="form-control" id="distance" value="100">
+                <div id="validate-km" class="invalid-feedback">
+                    Per favore inserisci un numero tra 0 e 1.000km!
+                </div>
             </div>
             <div class="mb-3 col">
                 <label class="mb-2" for="age">Fascia d'eta</label>
