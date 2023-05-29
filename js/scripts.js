@@ -16,6 +16,7 @@ button.addEventListener('click', function () {
     // clean old errors
     elementName.classList.remove('is-invalid');
     elementKm.classList.remove('is-invalid');
+    elementAge.classList.remove('is-invalid');
     document.getElementById('validate-name').style.display = 'none';
     document.getElementById('validate-km').style.display = 'none';
 
@@ -49,6 +50,7 @@ button.addEventListener('click', function () {
     const ticket = document.querySelector('.ticket');
 
     if (!isValid) {
+        //if not valid hides old ticket
         ticket.classList.add('hidden');
     } else {
 
@@ -65,7 +67,13 @@ button.addEventListener('click', function () {
         if (passengerAge === 'junior') price *= discountJunior;
         else if (passengerAge === 'senior') price *= discountSenior;
 
-        //TODO generate random ticket code, cab and seat;
+        //# generate random ticket code, cab and seat;
+        // ticket number is between 100000 and 999999
+        const ticketNumber = Math.floor(Math.random() * 899999 + 100000);
+        // cab is a number between 2 and 9
+        const cab = Math.floor(Math.random() * 8 + 2);
+        // seat is a number between 1 and 99
+        const seat = Math.floor(Math.random() * 99 + 1);
 
         // # print on screen
         // show ticket
@@ -74,5 +82,8 @@ button.addEventListener('click', function () {
         ticketName.innerText = passengerName;
         ticketType.innerText = passengerAge;
         ticketPrice.innerText = price.toFixed(2) + '€';
+        ticketCode.innerText = ticketNumber;
+        ticketCab.innerText = cab;
+        ticketSeat.innerText = seat;
     }
 })
