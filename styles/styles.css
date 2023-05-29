@@ -1,0 +1,25 @@
+img.logo {
+    width: 250px;
+    height: auto;
+}
+
+.ticket {
+    border: 2px solid #b50042;
+}
+
+#ticket-price {
+    font-size: 76px;
+}
+
+.ticket .table {
+    text-transform: uppercase;
+}
+
+.ticket .table thead {
+    background-color: #b50042;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}

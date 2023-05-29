@@ -27,7 +27,7 @@
     CARLO EUSEBI -->
 
     <div class="container">
-        <div class="row row-cols-3">
+        <div class="row row-cols-3 mt-5">
 
             <div class="mb-3 col">
                 <label class="mb-2" for="name">Nome e Cognome</label>
@@ -46,10 +46,48 @@
                 </select>
             </div>
         </div>
-        <div class="text-end">
-            <button class="btn btn-success">Calcola Ticket</button>
+        <div class="text-end mb-5">
+            <button class="btn btn-success mb-5">Calcola Ticket</button>
         </div>
-        <div class="temporary-answer"></div>
+
+
+        <div class="ticket card hidden">
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="text-center">
+                        <img class="logo mb-5" src="img/italo-logo.jpg" alt="Logo Italo">
+                        <p class="mb-0 h5">PREZZO BIGLIETTO</p>
+                        <p id="ticket-price">55.00€</p>
+                    </div>
+
+                    <div class="text-center">
+                        <p class="mb-0 h6">CODICE BIGLIETTO</p>
+                        <p id="ticket-code" class="h1">54446</p>
+                    </div>
+                </div>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nome Passeggero</th>
+                        <th>Tipo</th>
+                        <th>Extra</th>
+                        <th>Carrozza</th>
+                        <th>Posto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="ticket-name"></td>
+                        <td id="ticket-type"></td>
+                        <td></td>
+                        <td id="ticket-cab"></td>
+                        <td id="ticket-seat"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
 
