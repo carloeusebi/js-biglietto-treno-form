@@ -3,6 +3,11 @@ img.logo {
     height: auto;
 }
 
+/* to prevent buttons moving down when validation feedbacks appear */
+.form {
+    min-height: 115px;
+}
+
 .ticket {
     border: 2px solid #b50042;
 }

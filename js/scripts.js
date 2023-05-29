@@ -3,8 +3,11 @@
 const elementName = document.getElementById('name');
 const elementKm = document.getElementById('distance');
 const elementAge = document.getElementById('age');
-const button = document.querySelector('button');
+const submitButton = document.getElementById('submit');
+const resetButton = document.getElementById('reset');
 const tempAnswer = document.querySelector('.temporary-answer');
+
+const ticket = document.querySelector('.ticket');
 
 // declaring const variables
 
@@ -12,7 +15,27 @@ const pricePerKm = 0.21;
 const discountJunior = 0.8;
 const discountSenior = 0.6;
 
-button.addEventListener('click', function () {
+resetButton.addEventListener('click', function () {
+    //clear fields
+    elementName.value = '';
+    elementKm.value = '';
+    elementAge.value = 'adulto';
+
+    //resets errors (should use function :D)
+    elementName.classList.remove('is-invalid');
+    elementKm.classList.remove('is-invalid');
+    elementAge.classList.remove('is-invalid');
+    document.getElementById('validate-name').style.display = 'none';
+    document.getElementById('validate-km').style.display = 'none';
+
+    //hides ticket
+    ticket.classList.add('hidden');
+
+    //autofocus on name field
+    elementName.focus();
+})
+
+submitButton.addEventListener('click', function () {
     // clean old errors
     elementName.classList.remove('is-invalid');
     elementKm.classList.remove('is-invalid');
@@ -47,7 +70,6 @@ button.addEventListener('click', function () {
     }
 
     // ! AFTER validation 'grab' all dom element
-    const ticket = document.querySelector('.ticket');
 
     if (!isValid) {
         //if not valid hides old ticket
