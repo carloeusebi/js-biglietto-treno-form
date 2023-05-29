@@ -12,38 +12,52 @@ const pricePerKm = 0.21;
 const discountJunior = 0.8;
 const discountSenior = 0.6;
 
-button.addEventListener('click', function(){
+button.addEventListener('click', function () {
     const passengerName = elementName.value.trim();
     const passengerAge = elementAge.value;
     const kilometers = parseInt(elementKm.value);
-    
-    //TODO add validation
+
+    //# Validation
+    let isValid = true;
+
+    if (!passengerName) {
+        isValid = false;
+    }
+
+    if (!kilometers || kilometers < 1 || kilometers > 1000) {
+        isValid = false;
+    }
+
+    if (passengerAge !== 'adulto' && passengerAge !== 'senior' && passengerAge !== 'junior') {
+        isValid = false;
+    }
 
     // ! AFTER validation 'grab' all dom element
 
-    const ticket = document.querySelector('.ticket');
-    const ticketName = document.getElementById('ticket-name');
-    const ticketType = document.getElementById('ticket-type');
-    const ticketPrice = document.getElementById('ticket-price');
-    const ticketCab = document.getElementById('ticket-cab');
-    const ticketSeat = document.getElementById('ticket-seat');
-    const ticketCode = document.getElementById('ticket-code');
+    if (isValid) {
 
-    
-    let price = kilometers * pricePerKm;
-    
-    if (passengerAge === 'junior') price *= discountJunior;
-    else if (passengerAge === 'senior') price *= discountSenior;
+        const ticket = document.querySelector('.ticket');
+        const ticketName = document.getElementById('ticket-name');
+        const ticketType = document.getElementById('ticket-type');
+        const ticketPrice = document.getElementById('ticket-price');
+        const ticketCab = document.getElementById('ticket-cab');
+        const ticketSeat = document.getElementById('ticket-seat');
+        const ticketCode = document.getElementById('ticket-code');
 
-    //TODO generate random ticket code, cab and seat;
-    
-    // # print on screen
-    // show ticket
-    ticket.classList.remove('hidden');
+        let price = kilometers * pricePerKm;
 
-    ticketName.innerText = passengerName;
-    ticketType.innerText = passengerAge;
-    ticketPrice.innerText = price.toFixed(2) + '€';
+        //apply discount
+        if (passengerAge === 'junior') price *= discountJunior;
+        else if (passengerAge === 'senior') price *= discountSenior;
 
+        //TODO generate random ticket code, cab and seat;
 
+        // # print on screen
+        // show ticket
+        ticket.classList.remove('hidden');
+
+        ticketName.innerText = passengerName;
+        ticketType.innerText = passengerAge;
+        ticketPrice.innerText = price.toFixed(2) + '€';
+    }
 })
