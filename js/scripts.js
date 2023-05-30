@@ -41,7 +41,7 @@ submitButton.addEventListener('click', function () {
     const passengerAge = elementAge.value;
 
     // Validation
-    let isValid = validateInputs(passengerName, passengerAge, kilometers);
+    const isValid = validateInputs(passengerName, passengerAge, kilometers);
 
     if (!isValid) {
 
