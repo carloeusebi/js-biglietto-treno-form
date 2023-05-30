@@ -8,6 +8,13 @@ const resetButton = document.getElementById('reset');
 
 const ticket = document.querySelector('.ticket');
 
+const ticketName = document.getElementById('ticket-name');
+const ticketType = document.getElementById('ticket-type');
+const ticketPrice = document.getElementById('ticket-price');
+const ticketCode = document.getElementById('ticket-code');
+const ticketCab = document.getElementById('ticket-cab');
+const ticketSeat = document.getElementById('ticket-seat');
+
 // declaring const variables
 const pricePerKm = 0.21;
 const discountJunior = 0.8;
@@ -63,12 +70,12 @@ submitButton.addEventListener('click', function () {
         ticket.classList.remove('hidden'); //show ticket
 
         // collect dom elements and print outputs
-        document.getElementById('ticket-name').innerText = passengerName;
-        document.getElementById('ticket-type').innerText = passengerAge;
-        document.getElementById('ticket-price').innerText = price.toFixed(2) + '€';
-        document.getElementById('ticket-code').innerText = ticketCode;
-        document.getElementById('ticket-cab').innerText = cab;
-        document.getElementById('ticket-seat').innerText = seat;
+        ticketName.innerText = passengerName;
+        ticketType.innerText = passengerAge;
+        ticketPrice.innerText = price.toFixed(2) + '€';
+        ticketCode.innerText = ticketCode;
+        ticketCab.innerText = cab;
+        ticketSeat.innerText = seat;
     }
 })
 
