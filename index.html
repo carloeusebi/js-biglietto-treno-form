@@ -27,7 +27,7 @@
     CARLO EUSEBI -->
 
     <div class="container">
-        <div class="form row row-cols-3 mt-5">
+        <div class="form row row-cols-1 row-cols-lg-3 mt-5">
 
             <div class="mb-3 col">
                 <label class="mb-2" for="name">Nome e Cognome</label>
@@ -58,7 +58,7 @@
         </div>
 
 
-        <div class="ticket card hidden">
+        <div class="ticket card hidden mb-5">
             <div class="card-body">
 
                 <div class="d-flex justify-content-between align-items-start">
@@ -68,7 +68,7 @@
                         <p id="ticket-price"></p>
                     </div>
 
-                    <div class="text-center">
+                    <div class="text-center d-none d-lg-block">
                         <p class="mb-0 h6">CODICE BIGLIETTO</p>
                         <p id="ticket-code" class="h1"></p>
                     </div>
@@ -79,18 +79,18 @@
                     <tr>
                         <th>Nome Passeggero</th>
                         <th>Tipo</th>
-                        <th>Extra</th>
+                        <th class="d-none d-lg-table-cell">Extra</th>
                         <th>Carrozza</th>
-                        <th>Posto</th>
+                        <th class="d-none d-lg-table-cell">Posto</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td id="ticket-name"></td>
                         <td id="ticket-type"></td>
-                        <td></td>
+                        <td class="d-none d-lg-table-cell"></td>
                         <td id="ticket-cab"></td>
-                        <td id="ticket-seat"></td>
+                        <td id="ticket-seat" class="d-none d-lg-table-cell"></td>
                     </tr>
                 </tbody>
             </table>
