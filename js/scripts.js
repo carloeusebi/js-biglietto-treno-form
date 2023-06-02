@@ -79,6 +79,14 @@ submitButton.addEventListener('click', function () {
     }
 })
 
+/**
+ * validates three inputs, gives an error on screen for each input if not valid and return true if all inputs are valid, otherwise it returns false
+ * @param {string} passengerName the passenger name inserted by the user
+ * @param {string} passengerAge the age category selected by the user
+ * @param {number} kilometers the kilometer value inserted by the user
+ * @returns true if all inputs are valid, false if one of the inputs fails validation
+ */
+
 function validateInputs(passengerName, passengerAge, kilometers) {
 
     let isValid = true;
@@ -104,6 +112,9 @@ function validateInputs(passengerName, passengerAge, kilometers) {
     return isValid;
 }
 
+/**
+ * resets all errors
+ */
 function resetErrors() {
     elementName.classList.remove('is-invalid');
     elementKm.classList.remove('is-invalid');
@@ -111,6 +122,13 @@ function resetErrors() {
     document.getElementById('validate-name').style.display = 'none';
     document.getElementById('validate-km').style.display = 'none';
 }
+
+/**
+ * returns a random number, for given min and max values
+ * @param {number} min the minimum value the random number can be
+ * @param {number} max the maxmimum value the random number can be
+ * @returns random number between given min and max
+ */
 
 function generateRndNumber(min, max) {
     return Math.floor(Math.random() * (max + 1 - min) + min);
